@@ -6,6 +6,7 @@ package basicKnowledge.jvm.OOM;
  * @author:peicc
  * @create:2019-07-11 18:59:32
  **/
+//虚拟机栈产生OOM异常
 //1、如何线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError异常；
 //如果虚拟机在扩展栈时无法申请到足够内存，则抛出OOM异常
 //2、栈容量参数由-Xss来设定
