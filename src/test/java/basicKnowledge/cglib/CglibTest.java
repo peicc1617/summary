@@ -32,6 +32,7 @@ public class CglibTest {
         enhancer.setSuperclass(Dao.class);
         enhancer.setCallbacks(new Callback[]{daoProxy,daoAnotherProxy, NoOp.INSTANCE});
         enhancer.setCallbackFilter(new DaoFilter());
+        enhancer.setInterceptDuringConstruction(false);//设置使得构造函数调用类的其他方法不被拦截
         Dao dao=(Dao)enhancer.create();
         dao.update();
         dao.select();
