@@ -9,6 +9,7 @@ package basicKnowledge.jvm.GC;
 * -XX:+UseParNewGC 使用ParNew+Serial Old进行内存回收
 * 新生代总的可用空间为：8192+1024=9216（Eden+1个survivor）
  */
+//对象优先在Eden区中分配
 public class TestAllocation {
     private static int _1MB=1024*1024;
 

@@ -2,6 +2,7 @@ package basicKnowledge.jvm.GC;
 /*
 *VM args: -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:+UseParNewGC -XX:SurvivorRatio=8 -XX:PretenureSizeThreshold=2M
  */
+//大对象直接在老年代分配
 public class TestPretenureSizeThreshold {
     private static int _1MB=1024*1024;
 

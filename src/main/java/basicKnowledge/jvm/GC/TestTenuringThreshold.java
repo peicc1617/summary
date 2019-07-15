@@ -1,5 +1,5 @@
 package basicKnowledge.jvm.GC;
-
+//测试对象年龄
 public class TestTenuringThreshold {
     private static int _1MB=1024*1024;
 
