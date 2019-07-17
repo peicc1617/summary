@@ -16,7 +16,7 @@ public class HashMapTest {
     }
     private static void  HashMapAPITest(){
         Random r=new Random();
-        HashMap map=new HashMap();
+        HashMap<String,Integer> map=new HashMap<String,Integer>();
         map.put("one",r.nextInt(10));
         map.put("two",r.nextInt(10));
         map.put("three",r.nextInt(10));
@@ -45,5 +45,24 @@ public class HashMapTest {
         while(iterator2.hasNext()){
             System.out.println("值为："+iterator2.next());
         }
+        //方法4：foreach
+        System.out.println("**********foreach******************遍历");
+        for (Map.Entry entry:map.entrySet()) {
+            System.out.println("key="+entry.getKey()+",value="+entry.getValue());
+        }
+        //方法5：forEach keySet
+        System.out.println("*********forEach方法**********");
+        map.keySet().forEach(e-> System.out.println(e));
+        //方法5-1：foreach entrySet
+        System.out.println("********************forEach方法entrySet");
+        map.entrySet().forEach(e->{
+            System.out.println(e.getKey()+","+e.getValue());
+            System.out.println();
+        });
+        //方法5-2：forEach map
+        System.out.println("****************forEach +Map");
+        map.forEach((k,v)->{
+            System.out.println(k+","+v);
+        });
     }
 }

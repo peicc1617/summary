@@ -7,6 +7,7 @@ import java.util.HashMap;
  * @author:peicc
  * @create:2019-07-16 18:41:34
  **/
+//浅拷贝测试
 public class MapCloneTest {
     public static void main(String[] args) {
         Student zhangsan=new Student("zhangsan","男",25);
