@@ -8,5 +8,5 @@ import java.util.Collection;
  * @create:2019-07-17 21:52:29
  **/
 public class CollectionTest {
-    Collection
+
 }

@@ -1,6 +1,7 @@
 package basicKnowledge.集合框架;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -12,50 +13,54 @@ public class ArrayListTest {
     public static void main(String[] args) {
         //subList的结果不可以强转成ArrayList
         ArrayList list=new ArrayList();
-        for(int i=0;i<10;i++){
+        for(int i=0;i<1000000;i++){
             list.add(i);
         }
-        for (int i = 0; i <list.size() ; i++) {
-            System.out.println(list.get(i));
-        }
-        System.out.println("***********子列表***********");
-        List subList=list.subList(0,5);
-        for(int i = 0; i <subList.size() ; i++){
-            System.out.println(list.get(i));
-        }
-        System.out.println("************修改子链表内容*********");
-        subList.set(0,"modify");
-        for (int i = 0; i <list.size() ; i++) {
-            System.out.println(list.get(i));
-        }
-        System.out.println("************修改子链表个数*********");
-        subList.add("add");
-        for (int i = 0; i <list.size() ; i++) {
-            System.out.println(list.get(i));
-        }
-        for(int i = 0; i <subList.size() ; i++){
-            System.out.println(subList.get(i));
-        }
-        //对原集合元素个数的修改，会导致子列表的遍历、增加、删除均会产生ConcurrentModificationException异常
-        /*list.add("add1");
-        for(int i = 0; i <subList.size() ; i++){
-            System.out.println(subList.get(i));
-        }*/
-        System.out.println("************转换成数组***********");
-//        System.out.println((String[]) list.toArray());
-        //测试toArray()方法：使用有参方法
-        ArrayList list1=new ArrayList();
-        list1.add("1");
-        list1.add("2");
-        String[] array=new String[list1.size()];
-        array=(String [])list1.toArray(array);
-        for(int i=0;i<array.length;i++){
-            System.out.println(array[i]);
-        }
-
-
-
+        iteratorThroughRandomAccess(list) ;
+        iteratorThroughIterator(list) ;
+        iteratorThroughFor2(list) ;
+        System.out.println("结束");
     }
+    /**************三种遍历方式****************/
+    public static void iteratorThroughRandomAccess(List list) {
+
+        long startTime;
+        long endTime;
+        startTime = System.currentTimeMillis();
+        for (int i=0; i<list.size(); i++) {
+            list.get(i);
+        }
+        endTime = System.currentTimeMillis();
+        long interval = endTime - startTime;
+        System.out.println("iteratorThroughRandomAccess："  +endTime+"-"+startTime+"="+interval+" ms");
+    }
+
+    public static void iteratorThroughIterator(List list) {
+
+        long startTime;
+        long endTime;
+        startTime = System.currentTimeMillis();
+        for(Iterator iter = list.iterator(); iter.hasNext(); ) {
+            iter.next();
+        }
+        endTime = System.currentTimeMillis();
+        long interval = endTime - startTime;
+        System.out.println("iteratorThroughIterator：" + interval+" ms");
+    }
+
+
+    public static void iteratorThroughFor2(List list) {
+
+        long startTime;
+        long endTime;
+        startTime = System.currentTimeMillis();
+        for(Object obj:list)
+            ;
+        endTime = System.currentTimeMillis();
+        long interval = endTime - startTime;
+        System.out.println("iteratorThroughFor2：" + interval+" ms");
+    }
+
 
 
 }
