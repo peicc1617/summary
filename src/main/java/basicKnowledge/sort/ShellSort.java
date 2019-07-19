@@ -14,7 +14,7 @@ public class ShellSort {
             for(int num=0;num<gap;num++){//分的组数
                 //每一组使用插入排序算法
                 for(int i=num+gap;i<length;i=i+gap){//组中的元素
-                    int j=i-gap;//p为有序序列的最后一位下标
+                    int j=i-gap;//j为有序序列的最后一位下标
                     int temp=array[j];//待插入的元素
                     while(j>=0&&array[j]>temp){
                         array[j+gap]=array[j];
