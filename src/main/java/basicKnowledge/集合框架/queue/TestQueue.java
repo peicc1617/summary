@@ -1,6 +1,7 @@
 package basicKnowledge.集合框架.queue;
 
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @基本功能:
