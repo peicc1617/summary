@@ -1,5 +1,9 @@
 package basicKnowledge.tree;
 
+import com.sun.org.apache.bcel.internal.generic.BIPUSH;
+
+import java.util.Arrays;
+
 /**
  * @基本功能:二叉树的遍历
  * @program:summary
@@ -14,7 +18,7 @@ public class BinaryTreeTravel {
      * @return: void
      * @Date: 2019/7/24
      */
-    public void preOrderTravelse(BiTreeNode root){
+    public static void preOrderTravelse(BiTreeNode root){
         if(root==null){
             return;
         }
@@ -52,5 +56,29 @@ public class BinaryTreeTravel {
         postOrderTraverse(root.left);
         postOrderTraverse(root.right);
         System.out.println(root.element);
+    }
+    //根据前序和中序遍历结果重建二叉树
+    public static BiTreeNode reconstructBiTree(int[] pre,int[]in){
+        if(pre.length==0||in.length==0){//为空
+            return null;
+        }
+        //创建根节点
+        BiTreeNode node=new BiTreeNode(pre[0]);
+        //找到中序遍历的根节点
+        for(int i=0;i<in.length;i++){
+            if(pre[0]==in[i]){
+                node.left=reconstructBiTree(Arrays.copyOfRange(pre,1,i+1), Arrays.copyOfRange(in,0,i));
+                node.right=reconstructBiTree(Arrays.copyOfRange(pre,i+1,pre.length),Arrays.copyOfRange(in,i+1,in.length));
+                break;
+            }
+        }
+        return node;
+    }
+
+    public static void main(String[] args) {
+        int[] pre=new int[]{1,2,4,7,3,5,6,8};
+        int[] in=new int[]{4,7,2,1,5,3,8,6};
+        BiTreeNode root=reconstructBiTree(pre,in);
+        preOrderTravelse(root);
     }
 }

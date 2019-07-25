@@ -18,4 +18,7 @@ public class BiTreeNode<AnyType> {
     BiTreeNode(AnyType element){
         this(element,null,null);
     }
+    BiTreeNode(){
+
+    }
 }
