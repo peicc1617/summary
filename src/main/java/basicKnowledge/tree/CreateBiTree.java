@@ -21,10 +21,9 @@ public class CreateBiTree {
         String str=scanner.next();
             char[] c=str.toCharArray();
             if(c[0]=='#'){
-                return null;
+                T= null;
             }else{
                 T.element=c[0];//生成结点
-//                T=biTreeNode;
                 T.left=new BiTreeNode();
                 T.right=new BiTreeNode();
                 createBiTree(T.left);
@@ -70,8 +69,8 @@ public class CreateBiTree {
 //        t=createBiTree(t);
 //        binaryTreeTravel.preOrderTravelse(t);
         BiTreeNode t1=new BiTreeNode();
-//        t1=createBiTree(t1);
-        binaryTreeTravel.preOrderTravelse(createBiTree(t1));
+        createBiTree(t1);
+        binaryTreeTravel.preOrderTravelse(t1);
 //        BiTreeNode t2=new BiTreeNode();
 //        t2=createBiTreeWrong(t2);
 //        binaryTreeTravel.preOrderTravelse(t2);
