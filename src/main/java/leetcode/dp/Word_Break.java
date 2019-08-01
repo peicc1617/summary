@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @基本功能:
+ * @基本功能:字符串分解
  * @program:summary
  * @author:peicc
  * @create:2019-07-29 17:16:42
