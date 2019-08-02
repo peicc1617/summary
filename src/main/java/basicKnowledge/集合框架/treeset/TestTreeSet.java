@@ -14,6 +14,7 @@ public class TestTreeSet {
     public static void main(String[] args) {
         testTreeSetAPIS();
 //        testToArray();
+        System.out.println(203>>2);
     }
     public static void testTreeSetAPIS(){
         TreeSet treeSet=new TreeSet();
