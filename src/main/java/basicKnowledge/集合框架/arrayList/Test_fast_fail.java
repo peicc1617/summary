@@ -2,7 +2,6 @@ package basicKnowledge.集合框架.arrayList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @program:summary

@@ -1,6 +1,5 @@
 package basicKnowledge.tree;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -37,7 +36,7 @@ public class CreateBiTree {
      * @return: int
      * @Date: 2019/7/25
      */
-    public static int createBiTreeByString(BiTreeNode root,String str,int index){
+    public static int createBiTreeByString(BiTreeNode root, String str, int index){
         if('#'==str.charAt(index)){
             return index+1;
         }
@@ -70,7 +69,7 @@ public class CreateBiTree {
 //        binaryTreeTravel.preOrderTravelse(t);
         BiTreeNode t1=new BiTreeNode();
         createBiTree(t1);
-        binaryTreeTravel.preOrderTravelse(t1);
+        binaryTreeTravel.preOrderTraverse(t1);
 //        BiTreeNode t2=new BiTreeNode();
 //        t2=createBiTreeWrong(t2);
 //        binaryTreeTravel.preOrderTravelse(t2);

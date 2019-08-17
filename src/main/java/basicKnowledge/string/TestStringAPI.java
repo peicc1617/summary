@@ -1,8 +1,6 @@
 package basicKnowledge.string;
 
-import java.util.AbstractList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 //测试String API

@@ -1,6 +1,7 @@
 package basicKnowledge.sort;
 
 /**
+ * @基本功能：希尔排序
  * @program:summary
  * @author:peicc
  * @create:2019-07-18 20:52:31

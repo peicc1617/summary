@@ -1,10 +1,13 @@
 package basicKnowledge.sort;
 
-import java.net.SecureCacheResponse;
 import java.util.Scanner;
 
 /**
  * @基本功能:快速排序
+ * @时间复杂度：
+ * @最优：O(nlogn)
+ * @最差：O(n^2)
+ * @平均：
  * @program:summary
  * @author:peicc
  * @create:2019-07-22 21:41:29

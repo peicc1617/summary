@@ -26,7 +26,7 @@ public class Main {
             list.addFirst(temp);
         }
         double _result=list.getFirst();
-        String result=String.format("%.4f",_result);//保留小数点后四位
+        String result= String.format("%.4f",_result);//保留小数点后四位
         System.out.println(result);
     }
 }

@@ -51,12 +51,48 @@ public class PermutationForString {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        while(true){
-            String str=scanner.nextLine();
-            ArrayList<String> result=new ArrayList<String>();
-            result=Permutation(str);
-            System.out.println(result);
-        }
+//        while(true){
+//            String str=scanner.nextLine();
+//            ArrayList<String> result=new ArrayList<String>();
+//            result=Permutation(str);
+//            System.out.println(result);
+//        }
+        /****测试字典排序算法*****/
+        String str=scanner.next();
+        char[] array=str.toCharArray();
+        do {
+            System.out.println(array);
+        }while(CalcAllpertutation(array,str.length()));
 
+    }
+    //方法2：字典序排列
+    static boolean CalcAllpertutation(char[] array,int num){
+        int i=0;
+        //步骤一：找到排列中最后的一个升序的首位位置i
+        for(i=num-2;(i>=0)&&(array[i]>array[i+1]);i--){
+            ;
+        }
+        //i<0,说明已经找到所有排列（如12345，终止字符串为54321，）
+        if(i<0){
+            return false;
+        }
+        int k=0;
+        //步骤二：找到排列中第i位右边最后一个比array[i]大的位置k
+        for(k=num-1;(k>i)&&(array[k]<=array[i]);k--){
+            ;
+        }
+        //步骤三：交换i,k
+        swap(array,i,k);
+        //步骤四：把第i+1位到最后的部分翻转
+        reverseString(array,i+1,num-1);
+        return true;
+    }
+    //翻转字符串
+    public static void reverseString(char[] array,int from,int to){
+        while(from<to){
+            char temp=array[from];
+            array[from++]=array[to];
+            array[to--]=temp;
+        }
     }
 }

@@ -1,7 +1,5 @@
 package basicKnowledge.string;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 

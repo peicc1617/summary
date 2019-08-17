@@ -14,7 +14,7 @@ public class InsertSort {
     public void inertSort(int []array){
         int length=array.length;
         int insertNum;
-        for(int i=1;i<length;i++){//N-趟排序
+        for(int i=1;i<length;i++){//N-1pl趟排序
             insertNum=array[i];//待插入的元素
             int j=i-1;//已经排好的元素个数
             while(j>=0&&array[j]>insertNum){//从后向前比较，将大于insertNum的数据后移一位

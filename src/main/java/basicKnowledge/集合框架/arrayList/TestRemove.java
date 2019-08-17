@@ -1,7 +1,6 @@
 package basicKnowledge.集合框架.arrayList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @program:summary
