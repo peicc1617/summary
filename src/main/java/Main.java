@@ -2,27 +2,30 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        int N,T;
-        HashMap map1=new HashMap();
-        TreeMap map2=new TreeMap();
-        HashMap map3=new HashMap();
-        Scanner scanner=new Scanner(System.in);
-        while(true){
-            N=scanner.nextInt();//零食的种类
-            T=scanner.nextInt();
-            for(int i=0;i<N;i++){
-                map1.put(i,scanner.nextInt());//存储价位
-                map2.put(i,scanner.nextInt());//存储满意度
-                map3.put(i,scanner.nextInt());//存储数量
-            }
-            Iterator iterator=map2.entrySet().iterator();
-            while(iterator.hasNext()){
-                Map.Entry entry=(Map.Entry)iterator.next();
-                int key=(Integer) entry.getKey();
-                int value=(Integer) entry.getValue();
-            }
-
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            int num=sc.nextInt();
+            System.out.println(IntToBinary(num));
+            System.out.println(IntToBinaryByRe(num));
         }
 
+    }
+    //整数转化为二进制
+    public static String IntToBinary(int num){
+        String result="";
+        while(num>0){
+            result=num%2+result;
+            num=num/2;
+        }
+        return result;
+    }
+    //使用递归
+    public static String IntToBinaryByRe(int num){
+        if(num==0||num==1){
+            return String.valueOf(num);
+        }
+        String result="";
+        result=IntToBinaryByRe(num/2)+num%2;
+        return result;
     }
 }

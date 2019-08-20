@@ -3,7 +3,7 @@ package basicKnowledge.tree;
 
 
 /**
- * @基本功能:二叉搜索树
+ * @基本功能:二叉搜索树(二叉排序树)
  * @program:summary
  * @author:peicc
  * @create:2019-07-24 16:52:29
@@ -18,7 +18,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
      * @功能：二叉搜索树的结点
      * @Date: 2019/7/24
      */
-    private static class BinaryNode<AnyType>{
+     static class BinaryNode<AnyType>{
         AnyType element;//数据元素
         BinaryNode<AnyType> left;//左孩子节点
         BinaryNode<AnyType> right;//右孩子节点
@@ -37,7 +37,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
      * @return: boolean
      * @Date: 2019/7/24
      */
-    private boolean contains(AnyType x,BinaryNode<AnyType> root){
+    public boolean contains(AnyType x,BinaryNode<AnyType> root){
         if(root==null){
             return false;
         }
@@ -51,12 +51,12 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         return true;
     }
     /**
-     * @功能：找到最小的结点
+     * @功能：找到最小的结点（二叉搜索树的最小结点一定是最左结点）
      * @Param: [root]
      * @return: AnyType
      * @Date: 2019/7/24
      */
-    private BinaryNode<AnyType> findMin(BinaryNode<AnyType> root){
+    public BinaryNode<AnyType> findMin(BinaryNode<AnyType> root){
         if(root==null){
             return null;
         }
@@ -67,12 +67,12 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         }
     }
     /**
-     * @功能：找到最大的结点
+     * @功能：找到最大的结点（二叉搜索树的最大结点一定是最右节点 ）
      * @Param: [root]
      * @return: basicKnowledge.tree.BinarySearchTree.BinaryNode<AnyType>
      * @Date: 2019/7/24
      */
-    private BinaryNode<AnyType> findMax(BinaryNode<AnyType> root){
+    public BinaryNode<AnyType> findMax(BinaryNode<AnyType> root){
         if(root==null){
             return null;
         }
@@ -87,7 +87,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
      * @return: basicKnowledge.tree.BinarySearchTree.BinaryNode<AnyType>
      * @Date: 2019/7/24
      */
-    private BinaryNode<AnyType> insert(AnyType x,BinaryNode<AnyType> root){
+    public BinaryNode<AnyType> insert(AnyType x,BinaryNode<AnyType> root){
         if(root==null){
             return new BinaryNode<>(x,null,null);
         }
@@ -107,7 +107,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
      * @return: basicKnowledge.tree.BinarySearchTree.BinaryNode<AnyType>
      * @Date: 2019/7/24
      */
-    private BinaryNode<AnyType> remove(AnyType x,BinaryNode<AnyType> root){
+    public BinaryNode<AnyType> remove(AnyType x,BinaryNode<AnyType> root){
         if(root==null){//原树为空，返回空
             return null;
         }
@@ -118,8 +118,8 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             root.right=remove(x,root.right);//从右子树中删除并返回删除后的根节点
         }else if(root.left!=null&&root.right!=null){//删除的结点有两个子节点
             root.element=findMin(root.right).element;//待删除结点的右子树上最小的值代替待删除结点的值
-            root.right=remove(root.element,root.right);
-        }else{//删除的结点只有一个孩子
+            root.right=remove(root.element,root.right);//此时，右子树上最小的那个节点为无用结点，需要将其删除
+        }else{//删除的结点只有一个孩子或为叶子节点
             root=(root.left!=null)?root.left:root.right;//只有一个孩子，直接删除该结点，并用该节点的唯一子节点顶替它的位置
         }
         return root;

@@ -142,5 +142,12 @@ public class BinaryTreeTravel {
         preOrderTraverse(root);
         System.out.println("-------------非递归遍历-------------");
         preOrderTraverseByNoRe(root);
+        System.out.println("------------利用二叉搜索树的插入方法构建二叉树------------");
+        BinarySearchTree binarySearchTree=new BinarySearchTree();
+        BinarySearchTree.BinaryNode root1=null;
+        for (int i = 1; i <=10 ; i++) {
+           root1= binarySearchTree.insert(i,root1);
+        }
+        System.out.println(root1.element);
     }
 }
