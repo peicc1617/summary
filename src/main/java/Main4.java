@@ -1,4 +1,4 @@
-public class Main {
+public class Main4 {
     /**
      * 最长公共子序列
      *
