@@ -1,0 +1,22 @@
+一、整数
+1、整数转字符串
+#Integer.toString()//对象方法
+#Integer.toString(int)//类方法
+#String.valueOf(int);
+2、字符串转整数
+#Integer.parseInt(String);//类方法
+#Integer.parseInt(String,int);//指定进制
+#Integer.valueOf(String);
+3、整数转char
+(int)a +48
+4、进制转换
+十进制转其他进制(2,8,16)：Integer.toBinaryString()
+其他进制转十进制：Integer.parseInt(String i,int radix)
+5、保留n位小数
+String.format("%.5f",(double)10)
+0 1 12 -1 -1 -1
+-1 0 9 3 -1 -1
+-1 -1 0 -1 5 -1
+-1 -1 4 0 13 15
+-1 -1 -1 -1 0 4
+-1 -1 -1 -1 -1 0
