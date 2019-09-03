@@ -1,6 +1,8 @@
+package leetcode.number;
+
 import java.util.*;
 
-public class Main {
+public class IntToBinary {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         while(sc.hasNext()){
