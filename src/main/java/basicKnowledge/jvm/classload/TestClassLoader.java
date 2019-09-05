@@ -1,12 +1,9 @@
 package basicKnowledge.jvm.classload;
-
-import sun.misc.Launcher;
-
 import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @基本功能:
+ * @基本功能:自定义类加载器
  * @program:summary
  * @author:peicc
  * @create:2019-08-13 10:57:04
@@ -43,6 +40,5 @@ public class TestClassLoader {
         System.out.println(obj.getClass().getClassLoader());
         //输出basicKnowledge.jvm.classload.TestClassLoader类的类加载器
         System.out.println(basicKnowledge.jvm.classload.TestClassLoader.class.getClassLoader());
-        TestClassLoader a=new TestClassLoader();
     }
 }
