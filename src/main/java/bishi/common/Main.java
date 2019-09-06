@@ -1,33 +1,14 @@
 package bishi.common;
 
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
 
 public class Main {
     public final static ThreadLocal<String> s = new ThreadLocal<String>();
     public static void main(String[] args) {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                s.set("123");
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(s.get());
-            }
-        }).start();
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                s.set("456");
-
-
-                System.out.println(s.get());
-            }
-        }).start();
+       int n=Runtime.getRuntime().availableProcessors();
+        System.out.println(n);
     }
 
 }

@@ -20,6 +20,7 @@ public class QuickSort {
         int benchMark=array[left];
         int i=left,j=right;
         while(i!=j){
+            //必须先从从往左找
             //j从右向往走寻找比基本小的数
             while(array[j]>=benchMark&i<j){
                 j--;

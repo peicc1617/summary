@@ -14,25 +14,36 @@ import com.sun.scenario.effect.Merge;
  **/
 public class MergeSort {
     public static void main(String[] args) {
-        int[] SR={-1,50,10,90,30,70,40,80,60,20};
+        int[] SR={50,10,90,30,70,40,80,60,20};
         int[] TR1=new int[SR.length];
-        mergeSort(SR,TR1,1,9);
-        for (int i = 1; i<=9; i++) {
+        mergeSort(SR,TR1,0,8);
+        for (int i = 0; i<9; i++) {
             System.out.println(TR1[i]);
         }
 
     }
     //归并排序
+    /**
+     * @功能：
+     * @Param: [SR, TR1, s, t] SR：待排序数组
+     * @Param SR:待排序数组
+     * @Param TR1;排序后的数组
+     * @Param s：元素的起始位置
+     * @Param t:元素的终止位置
+     * @return: void
+     * @Date: 2019/9/6
+     */
     public static void mergeSort(int SR[],int[] TR1,int s,int t){
         int[] TR2=new int[SR.length];
         int m;
-        if(s==t){
+        if(s==t){//只有一个元素
             TR1[s]=SR[s];
         }else{
+            //先分再合
             m=(s+t)/2;
-            mergeSort(SR,TR2,s,m);
-            mergeSort(SR,TR2,m+1,t);
-            merge(TR2,TR1,s,m,t);
+            mergeSort(SR,TR2,s,m);//递归，将SR[s,m]归并排序成有序的TR2[s,m]
+            mergeSort(SR,TR2,m+1,t);//递归，将SR[m+1,t]归并排序成有序的TR2[m+1,t]
+            merge(TR2,TR1,s,m,t);//将TR2[s,m]、TR2[m+1,t]归并到TR1[s,m]中
         }
     }
     //合并两个有序数组
@@ -46,12 +57,12 @@ public class MergeSort {
                 TR[k]=SR[j++];
             }
         }
-        if(i<=m){
+        if(i<=m){//说明第一部分没有合并完
             for(;i<=m;){
                 TR[k++]=SR[i++];
             }
         }
-        if(j<=n){
+        if(j<=n){//说明第二部分没有合并完
             for(;j<=n;){
                 TR[k++]=SR[j++];
             }
