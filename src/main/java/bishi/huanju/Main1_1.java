@@ -7,4 +7,7 @@ package bishi.huanju;
  * @create:2019-09-09 18:43:14
  **/
 public class Main1_1 {
+    public static void main(String[] args) {
+
+    }
 }
