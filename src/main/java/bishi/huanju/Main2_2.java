@@ -1,5 +1,6 @@
 package bishi.huanju;
 
+import java.util.Scanner;
 import java.util.TreeSet;
 
 /**
@@ -10,8 +11,8 @@ import java.util.TreeSet;
  **/
 public class Main2_2 {
 
-        private TreeSet<String> set = new TreeSet();
-        private String swap(String str, int i, int j){
+        private static TreeSet<String> set = new TreeSet();
+        private static String swap(String str, int i, int j){
             // toCharArray()变成字符数组后进行交换
             char s[] = str.toCharArray();
             char tmp = s[i];
@@ -19,7 +20,7 @@ public class Main2_2 {
             s[j] = tmp;
             return String.valueOf(s);
         }
-        private void fullPerm(String str, int i){
+        private static void fullPerm(String str, int i){
             //排到最后一位就加入TreeSet
             if (i == str.length()){
                 set.add(str);
@@ -34,16 +35,34 @@ public class Main2_2 {
                 return;
             }
         }
-        public int next(int num){
-            String str = String.valueOf(num);
+        public static String next(String str1){
+            String str = str1;
             fullPerm(str, 0);
-            int ans = -1;
             for (String res : set){
-                if (Integer.parseInt(res) > num){
-                    ans = Integer.parseInt(res);
-                    break;
+                if(res.compareTo(str1)>0){
+                    return res;
                 }
             }
-            return ans;
+            return set.first();
         }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            set = new TreeSet();
+            StringBuilder sb=new StringBuilder();
+            String[] arr=sc.nextLine().split(",");
+            for (int i = 0; i <arr.length ; i++) {
+                sb.append(arr[i]);
+            }
+            String result=next(sb.toString());
+            StringBuilder sb1=new StringBuilder();
+            sb1.append(result.charAt(0));
+            for (int i = 1; i <result.length() ; i++) {
+                sb1.append(",").append(result.charAt(i));
+            }
+            System.out.println(sb1.toString());
+
+        }
+    }
 }
