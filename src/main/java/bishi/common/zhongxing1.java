@@ -10,16 +10,19 @@ import java.util.*;
  **/
 public class zhongxing1 {
     public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int nums[]=new int[n];
-        for (int i=0;i<n;i++){
-            nums[i]=sc.nextInt();
+        int[] nums;
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            nums = new int[n];
+            for (int i = 0; i < n; i++) {
+                nums[i] = sc.nextInt();
+            }
         }
         List<Integer>res=saraly(nums);
         for(int i=0;i<res.size();i++){
             System.out.print(res.get(i)+"  ");
         }
+
 
     }
 
