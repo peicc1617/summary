@@ -25,7 +25,6 @@ public class zhongxing1 {
 
 
     }
-
     public static List<Integer> saraly( int nums[]){
         if(nums==null||nums.length==0)
             return null;
