@@ -32,7 +32,7 @@ public class PermutationForString {
             list.add(String.valueOf(chars));
         }else{
             Set<Character> set=new HashSet<Character>();//储存出现的每个字符，用来判断字符是否重复
-            for(int j=i;j<chars.length;j++){
+            for(int j=i;j<chars.length;j++){//本质是深度优先搜索
                 if(!set.contains(chars[j])){
                     set.add(chars[j]);
                     swap(chars,i,j);//确定第一个字符

@@ -1,5 +1,8 @@
 package leetcode.array;
 
+import java.net.SecureCacheResponse;
+import java.util.*;
+
 /**
  * @基本功能:寻找和为定值的多个数
  * @program:summary
@@ -7,6 +10,7 @@ package leetcode.array;
  * @create:2019-08-21 11:01:43
  **/
 public class SumOfKNum {
+    /*-------------------------方法1：暴力枚举------------------------------------*/
     //以字符串的形式返回1~n的所有子集
     public static String[] getAllGroup(int n){
         int len = (int) Math.pow(2, n);
@@ -43,8 +47,45 @@ public class SumOfKNum {
             }
         }
     }
+/*--------------------方法2：转化为背包问题-------------------------------*/
+    static HashSet<LinkedList> set=new HashSet();
+    static LinkedList list=new LinkedList();
+    public static void sumOfKNumber(int sum,int[] array,int index){
+        if(index<0){
+            return ;
+        }
+        if(sum==array[index]){
+            list.add(array[index]);
+            set.add(list);
+        }
+            list.push(array[index]);
+            sumOfKNumber(sum-array[index],array,index-1);
+            list.pop();
+            sumOfKNumber(sum,array,index-1);
 
+    }
+    /*-----------------方法3：深度优先搜索------------------------*/
     public static void main(String[] args) {
-        printNumOfSum(10,16);
+//        printNumOfSum(10,16);
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            set=new HashSet<>();
+            list=new LinkedList();
+            int n=sc.nextInt();
+            int[] array=new int[n];
+            int sum=sc.nextInt();
+            for (int i = 0; i <n ; i++) {
+                array[i]=sc.nextInt();
+            }
+            sumOfKNumber(sum,array,array.length-1);
+            Iterator iterator=set.iterator();
+            while(iterator.hasNext()){
+                LinkedList list=(LinkedList) iterator.next();
+                for (int i = list.size()-1; i>=0 ; i--) {
+                    System.out.print(list.get(i)+" ");
+                }
+                System.out.println();
+            }
+        }
     }
 }

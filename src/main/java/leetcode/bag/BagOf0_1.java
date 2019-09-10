@@ -63,11 +63,12 @@ public class BagOf0_1 {
         }
         System.out.println("最大价值为:"+maxValue);
     }
-    /**
-     * @功能：返回背包重量从0-所有重量之和区间的每一个重量所能达到的最大值
-     * @Param: [weight, value]
-     * @return: int[][]
-     * @Date: 2019/8/21
+    /***
+     * @函数功能：动态规划:dp[i][j]=max(dp[i-1][j],dp[i-1][j-weight[i-1]]+value[i-1])
+     * @param: weight
+     * @param: value
+     * @param: w
+     * @return：int
      */
     public static int getMaxValue(int[]weight,int[] value,int w){
         int rows=weight.length+1;
@@ -78,7 +79,7 @@ public class BagOf0_1 {
                 if(j<weight[i-1]){//第i件物品
                     result[i][j]=result[i-1][j];
                 }else{
-                    result[i][j]=(int)Math.max(result[i-1][j],result[i-1][j-weight[i-1]]+value[i-1]);
+                    result[i][j]=Math.max(result[i-1][j],result[i-1][j-weight[i-1]]+value[i-1]);
                 }
             }
         }
