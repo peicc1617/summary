@@ -1,6 +1,5 @@
 package bishi.vivo;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.Scanner;
 
