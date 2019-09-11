@@ -15,22 +15,31 @@ public class Main1_1 {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr = new int[n];
-        int[] sortArr = new int[n];
+        int[] copy = new int[n];
         for (int i = 0; i < n; i++) {
 
             arr[i] = scanner.nextInt();
-            sortArr[i] = arr[i];
+            copy[i] = arr[i];
         }
-        Arrays.sort(sortArr);
+        Arrays.sort(copy);
         int count = 0;
         int j = 0;
         for (int i = 0; i < n; i++) {
 
-            if(arr[i] == sortArr[j]){
+            if(arr[i] == copy[j]){
                 ++count;
                 ++j;
             }
         }
-        System.out.println(n-count);
+        int result1=0;
+        for (int i = 0; i <n ; i++) {
+            if(arr[i]==copy[i]){
+                result1++;
+            }
+        }
+        int result2=n-count;
+        int result=Math.max(result1,result2);
+        System.out.println(result);
+        System.out.println(result2);
     }
 }

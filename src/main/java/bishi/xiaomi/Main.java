@@ -1,4 +1,4 @@
-package bishi.xiaomi;
+
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author:peicc
  * @create:2019-09-11 18:45:25
  **/
-public class Main2 {
+public class Main {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -28,5 +28,4 @@ public class Main2 {
         }
         System.out.println(count);
     }
-
 }
