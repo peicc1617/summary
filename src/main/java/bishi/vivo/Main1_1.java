@@ -7,4 +7,7 @@ package bishi.vivo;
  * @create:2019-09-11 15:51:26
  **/
 public class Main1_1 {
+    public static void main(String[] args) {
+
+    }
 }
