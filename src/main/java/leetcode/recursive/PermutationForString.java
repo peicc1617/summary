@@ -3,7 +3,7 @@ package leetcode.recursive;
 import java.util.*;
 
 /**
- * @基本功能:打印输出字符串的全排列
+ * @基本功能:打印输出字符串的全排列(本质是深度优先搜索)
  * @program:summary
  * @author:peicc
  * @create:2019-08-02 18:09:16

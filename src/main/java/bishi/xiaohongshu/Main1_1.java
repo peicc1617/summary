@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
- * @基本功能:
+ * @基本功能:并查集
  * @program:summary
  * @author:peicc
  * @create:2019-09-14 14:55:31
@@ -16,9 +16,8 @@ public class Main1_1 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         N=sc.nextInt();//用户数量
-        int[][] e=new int[N][N];
+        e=new int[N][N];
         book=new int[N];
-        int count_1=0;
         for (int i = 0; i <N ; i++) {
             for (int j = 0; j <N ; j++) {
                 e[i][j]=sc.nextInt();
@@ -33,6 +32,11 @@ public class Main1_1 {
         }
         System.out.println(count);
     }
+    /***
+     * @函数功能：树的广度遍历
+     * @param cur:当前结点
+     * @return：void
+     */
     public static void bfs(int cur){
         LinkedList queue=new LinkedList();
         queue.add(cur);

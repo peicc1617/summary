@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class ShortestPath {
     private static final int inf=99999999;//代表正无穷
     /**
-     * @功能：通过Floyd-Warshall来解决顶点i到顶点j的最短路径
+     * @功能：通过Floyd-Warshall来解决顶点i到顶点j的最短路径（引入其他顶点中转）
      * @时间复杂度：O(n^3)
      * @Param: [distance]
      * @return: int[][]
@@ -42,7 +42,7 @@ public class ShortestPath {
         int[] result=new int[len];
         //初始化返回数组，其中的各个元素表示第source个顶点到其余各个顶点之间的初始路程
         for (int i = 0; i <len ; i++) {
-            result[i]=distance[source][i];
+            result[i]=distance[source][i];//源顶点到其他顶点的初始距离
         }
         //book数组初始化
         book[0]=1;//最开始只有源顶点到自身的最短路程已知

@@ -28,7 +28,7 @@ public class Union_find {
     public static int getFather(int i,int[] init){
         if(i==init[i]){
             return i;
-        }else{
+        }else{//路径压缩
             init[i]=getFather(init[i],init);
             return init[i];
         }
@@ -39,8 +39,8 @@ public class Union_find {
         t1=getFather(v,init);
         t2=getFather(u,init);
         if(t1!=t2){
-            init[t2]=t1;
-            init[u]=v;
+            init[t2]=t1;//u的最高领导人归顺v的最高领导人
+//            init[u]=v;
         }
     }
 
