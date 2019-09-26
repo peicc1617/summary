@@ -12,22 +12,25 @@ public class FullPerm {
     static int n;
     static int[] box;//盒子
     static int[] visited;//标识是否放入到盒子
+    static int k;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         n=sc.nextInt();
+        k=sc.nextInt();
         box=new int[n];
         visited=new int[n+1];
         dfs(0);
     }
+    static int count=1;
     public static void dfs(int step){
-        if(step>=n){
-            for (int i = 0; i <n ; i++) {
+        if(step>=k){
+            for (int i = 0; i <k ; i++) {
                 System.out.print(box[i]+" ");
             }
-            System.out.println();
+            System.out.println("第"+(count++)+"个");
             return;
         }
-        for (int i = 1; i <=n ; i++) {
+        for (int i =1; i <=n ; i++) {
             if(visited[i]==0){
                 box[step]=i;
                 visited[i]=1;

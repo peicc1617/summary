@@ -60,7 +60,7 @@ public class LCS {
     public static void backtrace(char[][] state, String str1, int i, int j, int subLen,String lcs, Set<String> set){
         if(i==0||j==0){
             StringBuilder sb=new StringBuilder(lcs);
-            lcs=sb.reverse().toString();
+            lcs=sb.reverse().toString();//反转
             if(lcs.length()==subLen){
                 set.add(lcs);
             }

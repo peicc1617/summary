@@ -24,7 +24,7 @@ public class N_K {
             for(int i=start;i<=n;i++){
                 list.add(i);
                 backTracking(n,k-1,i+1,list,result);
-                list.remove(list.size()-1);
+                list.remove(list.size()-1);//回溯
             }
         }
     }

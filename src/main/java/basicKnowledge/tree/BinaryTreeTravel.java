@@ -218,6 +218,7 @@ public class BinaryTreeTravel {
             }
             temp=(BiTreeNode) stack.peek();
             if(temp.right==null||temp.right==lastNode){//只有当前结点的右孩子节点为空或已被访问过，才可以访问当前结点
+                temp=(BiTreeNode) stack.pop();
                 System.out.println(temp.element);
                 lastNode=temp;
             }else{
