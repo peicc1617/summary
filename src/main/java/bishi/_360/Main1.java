@@ -13,6 +13,7 @@ public class Main1 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
+        int m=sc.nextInt();
         int[] arr=new int[n];
         for (int i = 0; i <n ; i++) {
             arr[i]=sc.nextInt();
@@ -34,6 +35,17 @@ public class Main1 {
         while(!stack.isEmpty()){
             res[stack.pop()][1]=-1;
         }
+        double sum=0;
+        double count=0;
+        for (int i = 0; i <res.length ; i++) {
+            if(res[i][0]!=-1&&res[i][1]!=-1){
+                sum+=arr[i];
+                count++;
+            }
+        }
+        double avg=sum/count;
+        String str=String.format("%.3f",avg);
+        System.out.println(str);
         for (int i = 0; i <res.length ; i++) {
             System.out.println(res[i][0]+" "+res[i][1]);
         }
