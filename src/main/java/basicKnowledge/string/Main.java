@@ -10,23 +10,19 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        int n=scanner.nextInt();
-        LinkedList<Double> list=new LinkedList<Double>();
-
-        for(int i=0;i<n;i++){
-            list.add(scanner.nextDouble());
+       String str1="hello";
+       String str2="hello";
+        System.out.println(System.identityHashCode(str1));
+        System.out.println(System.identityHashCode(str1));
+        System.out.println(str1==str2);
+        String str3="he";
+        String str4="llo";
+        String str5=str3+str4;
+        System.out.println(str1==str5);
+        String  str6="";
+        for (int i = 0; i <3 ; i=i+2) {
+            str6+=String.valueOf(i)+" "+String.valueOf(i+1);
         }
-        Collections.sort(list);
-        boolean flag=true;
-        int length=list.size();
-        while(list.size()!=1){
-            double a=list.removeFirst();
-            double b=list.removeFirst();
-            double temp=(a+b)/2;
-            list.addFirst(temp);
-        }
-        double _result=list.getFirst();
-        String result= String.format("%.4f",_result);//保留小数点后四位
-        System.out.println(result);
+        System.out.println(str6);
     }
 }
