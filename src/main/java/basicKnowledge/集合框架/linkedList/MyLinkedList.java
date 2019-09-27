@@ -1,13 +1,10 @@
 package basicKnowledge.集合框架.linkedList;
-
-import basicKnowledge.集合框架.arrayList.MyArrayList;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 
 /**
- * @program:summary
+ * @program:手写一个双向链表
  * @author:peicc
  * @create:2019-07-22 15:43:31
  **/
@@ -106,7 +103,7 @@ public class MyLinkedList<E> implements Iterable{
         return oldValue;
     }
    /**
-    * @功能：给定借点钱插入元素
+    * @功能：给定结点前插入元素
     * @Param: [e, node]
     * @return: void
     * @Date: 2019/7/22
@@ -116,7 +113,7 @@ public class MyLinkedList<E> implements Iterable{
         Node<E> prev=node.prev;
         //根据插入元素构造新节点
         Node<E> newNode=new Node<E>(prev,e,node);
-        //当前结点为新节点的后继结点
+        //新结点为当前节点的前驱结点
         node.prev=newNode;
         if(prev==null){
             first=newNode;
@@ -138,6 +135,14 @@ public class MyLinkedList<E> implements Iterable{
         }else{
             linkBefore(e,node(index));
         }
+    }
+    /***
+     * @函数功能：链表头部添加元素
+     * @param e:
+     * @return：void
+     */
+    public void addFirst(E e){
+        linkFirst(e);
     }
     /**
      * @功能：链表末尾增加元素
