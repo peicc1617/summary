@@ -53,7 +53,7 @@ public class Main2 {
         //Dijkstra算法核心语句
         for (int i = 0; i <len-1 ; i++) {//每次循环，源顶点到其中某一个顶点的最短路径被确定，一共有n-1个顶点，所以循环n-1次
             //寻找离源顶点最近的点
-            int min=inf;
+            int min=Integer.MAX_VALUE;
             int position=0;//记录离源顶点最近点的位置
             for (int j = 0; j <len ; j++) {
                 if(book[j]==0&&result[j]<min){//book[j]==0保证源顶点到该顶点的最短路径还未确定
@@ -64,7 +64,7 @@ public class Main2 {
             //找到离源顶点最短距离的顶点后,源顶点到该顶点的最短路程就被确定，此时将该顶点的标志设为1
             book[position]=1;
             for (int v = 0; v <len ; v++) {
-                if(distance[position][v]<inf){//顶点position到顶点V连通
+                if(distance[position][v]!=-1){//顶点position到顶点V连通
                     if(result[v]>result[position]+distance[position][v]){//源顶点到顶点V的估计值大于通过顶点position的值
                         result[v]=result[position]+distance[position][v];
                     }
