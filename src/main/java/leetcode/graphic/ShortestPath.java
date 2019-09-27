@@ -45,14 +45,14 @@ public class ShortestPath {
             result[i]=distance[source][i];//源顶点到其他顶点的初始距离
         }
         //book数组初始化
-        book[0]=1;//最开始只有源顶点到自身的最短路程已知
+        book[source]=1;//最开始只有源顶点到自身的最短路程已知
         //Dijkstra算法核心语句
         for (int i = 0; i <len-1 ; i++) {//每次循环，源顶点到其中某一个顶点的最短路径被确定，一共有n-1个顶点，所以循环n-1次
             //寻找离源顶点最近的点
             int min=inf;
             int position=0;//记录离源顶点最近点的位置
             for (int j = 0; j <len ; j++) {
-                if(book[j]==0&&result[j]<inf){//book[j]==0保证源顶点到该顶点的最短路径还未确定
+                if(book[j]==0&&result[j]<min){//book[j]==0保证源顶点到该顶点的最短路径还未确定
                     min=result[j];
                     position=j;
                 }
@@ -68,7 +68,7 @@ public class ShortestPath {
                     //result[position]表示源顶点到位置position顶点的距离
                     //result[position]+distance[position][v]表示源顶点通过位置position顶点到达顶点v的距离
                     if(result[v]>result[position]+distance[position][v]){
-                        result[position]=result[position]+distance[position][v];
+                        result[v]=result[position]+distance[position][v];
                     }
                 }
             }

@@ -49,7 +49,7 @@ public class Main2 {
             result[i]=distance[source][i];//源顶点到其他顶点的初始距离
         }
         //book数组初始化
-        book[0]=1;//最开始只有源顶点到自身的最短路程已知
+        book[source]=1;//最开始只有源顶点到自身的最短路程已知
         //Dijkstra算法核心语句
         for (int i = 0; i <len-1 ; i++) {//每次循环，源顶点到其中某一个顶点的最短路径被确定，一共有n-1个顶点，所以循环n-1次
             //寻找离源顶点最近的点
@@ -61,11 +61,11 @@ public class Main2 {
                     position=j;
                 }
             }
-            //找到离源顶点最段距离的顶点后,源顶点到该顶点的最短路程就被确定，此时将该顶点的标志设为1
+            //找到离源顶点最短距离的顶点后,源顶点到该顶点的最短路程就被确定，此时将该顶点的标志设为1
             book[position]=1;
             for (int v = 0; v <len ; v++) {
                 if(distance[position][v]<inf){//顶点position到顶点V连通
-                    if(result[v]>result[position]+distance[position][v]){
+                    if(result[v]>result[position]+distance[position][v]){//源顶点到顶点V的估计值大于通过顶点position的值
                         result[v]=result[position]+distance[position][v];
                     }
                 }

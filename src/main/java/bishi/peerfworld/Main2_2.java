@@ -7,4 +7,5 @@ package bishi.peerfworld;
  * @create:2019-09-27 18:53:56
  **/
 public class Main2_2 {
+    public final static native boolean raycast();
 }
