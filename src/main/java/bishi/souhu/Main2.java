@@ -1,6 +1,6 @@
 package bishi.souhu;
 
-/*import leetcode.ThreadTurn;*/
+//import leetcode.ThreadTurn;
 
 /**
  * @基本功能:
