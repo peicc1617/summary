@@ -20,6 +20,12 @@ public class MyArrayQueue<E> {
         this.rear=0;
         this.length=DEFAULT_SIZE;
     }
+    MyArrayQueue (int initCapacity) {
+        this.element=new Object[initCapacity];
+        this.font=0;
+        this.rear=0;
+        this.length=initCapacity;
+    }
     //MyArrayQueue类型的构造函数,实现队列初始化
     MyArrayQueue(MyArrayQueue<? extends E> c){
         //自己去实现
@@ -32,7 +38,7 @@ public class MyArrayQueue<E> {
     public boolean enQueue(E e){
         //首先判断队列是否已满
         if((rear+1)%length==font){
-            return false;
+            throw new IndexOutOfBoundsException("队列已满");
         }
         element[rear]=e;//元素置于队尾
         rear=(rear+1)%length;//rear后移一位,若到末尾则转移到数组头部
@@ -61,13 +67,13 @@ public class MyArrayQueue<E> {
     }
 
     public static void main(String[] args) {
-        MyArrayQueue<Integer> myArrayQueue=new MyArrayQueue<Integer>();
+        MyArrayQueue<Integer> myArrayQueue=new MyArrayQueue<>(11);
         for(int i=0;i<10;i++){
             myArrayQueue.enQueue(i);
         }
         System.out.println();
         System.out.println("队列元素的个数为："+myArrayQueue.getSize());
-        System.out.println("********打印输出********");
+        System.out.println("----------打印输出-----------");
         while(!myArrayQueue.isEmpty()){
             System.out.print(myArrayQueue.deQueue()+" ");
         }

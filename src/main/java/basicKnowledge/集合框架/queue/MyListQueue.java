@@ -34,6 +34,7 @@ public class MyListQueue<E> {
             return null;
         }
         Node<E> node=font;
+        node.next=null;//断开连接
         font=font.next;
         return node.item;
     }
