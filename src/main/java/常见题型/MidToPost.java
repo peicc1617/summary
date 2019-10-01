@@ -1,6 +1,7 @@
 package 常见题型;
 
 
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -58,13 +59,11 @@ public class MidToPost {
     }
 
     public static void main(String[] args) {
-        /*Scanner scanner=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
         String str=scanner.nextLine();
         String result=midToPost(str);
-        System.out.println(result);*/
-        Character sc1='c';
-        Character sc2='c';
-        System.out.println((int)'a');
+        System.out.println(result);
+
     }
 
 }
