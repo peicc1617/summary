@@ -1,6 +1,4 @@
 package leetcode.array;
-
-import java.net.SecureCacheResponse;
 import java.util.*;
 
 /**
@@ -58,11 +56,10 @@ public class SumOfKNum {
             list.add(array[index]);
             set.add(list);
         }
-            list.push(array[index]);
-            sumOfKNumber(sum-array[index],array,index-1);
-            list.pop();
-            sumOfKNumber(sum,array,index-1);
-
+        list.push(array[index]);
+        sumOfKNumber(sum-array[index],array,index-1);
+        list.pop();
+        sumOfKNumber(sum,array,index-1);
     }
     /*-----------------方法3：深度优先搜索------------------------*/
     public static void main(String[] args) {

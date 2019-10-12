@@ -17,7 +17,7 @@ public class Singleton_lazy_Double {
         //第一次校验
         if(singleton==null){
             //加锁
-            synchronized (Singleton_lazy_Syn.class){
+            synchronized (Singleton_lazy_Double.class){
                 //第二次校验
                 if(singleton==null){
                     //非原子操作，会发生指令重排
