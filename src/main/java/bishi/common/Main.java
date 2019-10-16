@@ -14,8 +14,8 @@ public class Main {
      * @return：void
      */
     public static void main(String[] args) {
-        int[] arr=new int[5];
-        System.out.println(arr[0]);
+        String str="你好";
+        System.out.println(str.length());
     }
 
 }
