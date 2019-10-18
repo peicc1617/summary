@@ -49,16 +49,7 @@ public class Union_find {
         //第一行两个数 n,m n:表示强盗的人数 m:表示线索的数目
         //接下来的m行每一行有两个数a,b,表示强盗a和强盗b是同伙
       /*
-        10 9
-        1 2
-        3 4
-        5 2
-        4 6
-        2 6
-        8 7
-        9 7
-        1 6
-        2 4
+
             */
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
