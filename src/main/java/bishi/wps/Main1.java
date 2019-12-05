@@ -7,4 +7,7 @@ package bishi.wps;
  * @create:2019-10-18 19:47:14
  **/
 public class Main1 {
+    public static void main(String[] args) {
+
+    }
 }
