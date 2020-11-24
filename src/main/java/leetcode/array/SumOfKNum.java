@@ -49,12 +49,17 @@ public class SumOfKNum {
     static HashSet<LinkedList> set=new HashSet();
     static LinkedList list=new LinkedList();
     public static void sumOfKNumber(int sum,int[] array,int index){
-        if(index<0){
+        if(index<0||sum<0){
             return ;
         }
         if(sum==array[index]){
             list.add(array[index]);
-            set.add(list);
+//            set.add(list);
+            for (int i = list.size()-1; i >=0 ; i--) {
+                System.out.print(list.get(i)+" ");
+            }
+            System.out.println();
+            list.pop();
         }
         list.push(array[index]);
         sumOfKNumber(sum-array[index],array,index-1);
@@ -66,8 +71,8 @@ public class SumOfKNum {
 //        printNumOfSum(10,16);
         Scanner sc=new Scanner(System.in);
         while(sc.hasNext()){
-            set=new HashSet<>();
-            list=new LinkedList();
+            /*set=new HashSet<>();
+            list=new LinkedList();*/
             int n=sc.nextInt();
             int[] array=new int[n];
             int sum=sc.nextInt();
@@ -76,13 +81,13 @@ public class SumOfKNum {
             }
             sumOfKNumber(sum,array,array.length-1);
             Iterator iterator=set.iterator();
-            while(iterator.hasNext()){
+            /*while(iterator.hasNext()){
                 LinkedList list=(LinkedList) iterator.next();
                 for (int i = list.size()-1; i>=0 ; i--) {
                     System.out.print(list.get(i)+" ");
                 }
                 System.out.println();
-            }
+            }*/
         }
     }
 }
